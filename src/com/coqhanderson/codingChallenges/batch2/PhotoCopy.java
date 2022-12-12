@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class PhotoCopy {
 
-    public static int numberOfshops(int[] A) {
+    public static int numberOfShops(int[] A) {
 
         Arrays.sort(A);
         int shops = 0;

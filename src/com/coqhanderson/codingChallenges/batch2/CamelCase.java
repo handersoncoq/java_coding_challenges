@@ -7,18 +7,14 @@ public class CamelCase {
     public static String camelCase(String S){
 
         StringBuilder camelCase = new StringBuilder();
-        for (int i=0; i<=S.length()-1; i++) {
-
-            if(S.charAt(i) == 32) {
-                i++;
-                camelCase.append(Character.toUpperCase(S.charAt(i)));
-                i++;
-            }
-            camelCase.append(Character.toLowerCase(S.charAt(i)));
+        camelCase.append(Character.toLowerCase(S.charAt(0)));
+        for (int i=1; i<S.length(); i++) {
+            while(S.charAt(i) == 32) i++;
+            if(S.charAt(i-1) == 32) camelCase.append(Character.toUpperCase(S.charAt(i)));
+            else camelCase.append(Character.toLowerCase(S.charAt(i)));
         }
         return camelCase.toString();
     }
-
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
